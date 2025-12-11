@@ -1,0 +1,211 @@
+<div class="min-h-screen flex bg-gray-50 text-gray-800 font-sans">
+
+  <!-- Sidebar -->
+  <aside
+    [class.w-64]="!sidebarCollapsed"
+    [class.w-16]="sidebarCollapsed"
+    class="transition-all duration-200 bg-white shadow-lg">
+    <div class="p-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-[var(--color-primary-red)] flex items-center justify-center text-white font-bold"
+             *ngIf="!sidebarCollapsed">AD</div>
+        <div class="text-[14px] font-semibold" *ngIf="!sidebarCollapsed">Admin</div>
+      </div>
+      <button class="p-1" (click)="toggleSidebar()">
+        <svg *ngIf="!sidebarCollapsed" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round"
+             stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        <svg *ngIf="sidebarCollapsed" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round"
+             stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+
+    <nav class="mt-6">
+      <ul class="space-y-1">
+        <li>
+          <button (click)="activeView = 'overview'"
+                  [class.font-semibold]="activeView === 'overview'"
+                  class="flex items-center gap-3 w-full px-4 py-3 hover:bg-gray-100">
+            <span class="w-6 text-center">📊</span>
+            <span *ngIf="!sidebarCollapsed">Overview</span>
+          </button>
+        </li>
+        <li>
+          <button (click)="activeView = 'users'"
+                  [class.font-semibold]="activeView === 'users'"
+                  class="flex items-center gap-3 w-full px-4 py-3 hover:bg-gray-100">
+            <span class="w-6 text-center">👥</span>
+            <span *ngIf="!sidebarCollapsed">Users</span>
+          </button>
+        </li>
+        <li>
+          <button (click)="activeView = 'orgs'"
+                  [class.font-semibold]="activeView === 'orgs'"
+                  class="flex items-center gap-3 w-full px-4 py-3 hover:bg-gray-100">
+            <span class="w-6 text-center">🏥</span>
+            <span *ngIf="!sidebarCollapsed">Organizations</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main content -->
+  <div class="flex-1">
+    <!-- top navbar -->
+    <header class="bg-white shadow-sm sticky top-0 z-20 ">
+      <div class="flex items-center justify-between px-6 py-4 ">
+        <div class="flex items-center gap-6">
+          <h2 class="text-lg font-bold">Admin Dashboard</h2>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="hidden md:flex items-center gap-4">
+            <div class="text-sm">Signed in as <strong>Admin</strong></div>
+            <button class="px-4 py-2 rounded border" (click)="$event.preventDefault()">Logout</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- page content -->
+    <main class="p-6">
+      <!-- Overview -->
+      <section *ngIf="activeView === 'overview'">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+          <div class="bg-white rounded-lg p-6 shadow-sm">
+            <div class="text-sm font-medium text-gray-500">Users</div>
+            <div class="mt-3 text-2xl font-bold">{{ usersCount }}</div>
+            <div class="mt-3 text-xs text-gray-500">Total registered users</div>
+          </div>
+          <div class="bg-white rounded-lg p-6 shadow-sm">
+            <div class="text-sm font-medium text-gray-500">Organizations</div>
+            <div class="mt-3 text-2xl font-bold">{{ orgsCount }}</div>
+            <div class="mt-3 text-xs text-gray-500">Total partner orgs</div>
+          </div>
+          <div class="bg-white rounded-lg p-6 shadow-sm">
+            <div class="text-sm font-medium text-gray-500">Donors</div>
+            <div class="mt-3 text-2xl font-bold">—</div>
+            <div class="mt-3 text-xs text-gray-500">Donor stats (future)</div>
+          </div>
+          <div class="bg-white rounded-lg p-6 shadow-sm">
+            <div class="text-sm font-medium text-gray-500">Banks</div>
+            <div class="mt-3 text-2xl font-bold">—</div>
+            <div class="mt-3 text-xs text-gray-500">Bank stats (future)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Users -->
+      <section *ngIf="activeView === 'users'">
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="text-xl font-semibold">Users</h3>
+          <div class="flex items-center gap-3">
+            <input type="search" [(ngModel)]="filterUsers" (input)="applyUserFilter()" placeholder="Search users..." class="px-3 py-2 border rounded-lg" />
+            <button class="px-4 py-2 bg-[var(--color-primary-red)] text-white rounded" (click)="openAddUser()">Add User</button>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+          <table class="min-w-full divide-y">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="px-6 py-3 text-left text-sm text-gray-500">Name</th>
+                <th class="px-6 py-3 text-left text-sm text-gray-500">Email</th>
+                <th class="px-6 py-3 text-left text-sm text-gray-500 hidden md:table-cell">Role</th>
+                <th class="px-6 py-3 text-left text-sm text-gray-500">Active</th>
+                <th class="px-6 py-3 text-right text-sm text-gray-500">Actions</th>
+              </tr>
+            </thead>
+            <tbody class="bg-white divide-y">
+              <tr *ngFor="let u of paginatedUsers">
+                <td class="px-6 py-4 text-sm">{{ u.name }}</td>
+                <td class="px-6 py-4 text-sm">{{ u.email }}</td>
+                <td class="px-6 py-4 text-sm hidden md:table-cell">{{ u.role }}</td>
+                <td class="px-6 py-4 text-sm">
+                  <span [class.text-green-600]="u.active" [class.text-red-500]="!u.active">{{ u.active ? 'Yes' : 'No' }}</span>
+                </td>
+                <td class="px-6 py-4 text-sm text-right">
+                  <button class="mr-2 px-3 py-1 border rounded" (click)="openEditUser(u)">Edit</button>
+                  <button class="px-3 py-1 border rounded hover:bg-red-50" (click)="removeUser(u.id)">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Organizations -->
+      <section *ngIf="activeView === 'orgs'">
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="text-xl font-semibold">Organizations</h3>
+          <div class="flex items-center gap-3">
+            <input type="search" [(ngModel)]="filterOrgs" (input)="applyOrgFilter()" placeholder="Search organizations..." class="px-3 py-2 border rounded-lg" />
+            <button class="px-4 py-2 bg-[var(--color-primary-red)] text-white rounded" (click)="openAddOrg()">Add Org</button>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <div *ngFor="let o of filteredOrgs" class="bg-white p-6 rounded-lg shadow-sm flex justify-between items-center">
+            <div>
+              <div class="font-semibold">{{ o.name }}</div>
+              <div class="text-sm text-gray-500">{{ o.address }}</div>
+            </div>
+            <div class="flex items-center gap-3">
+              <button class="px-4 py-2 border rounded" (click)="openEditOrg(o)">Edit</button>
+              <button class="px-4 py-2 border rounded hover:bg-red-50" (click)="removeOrg(o.id)">Delete</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+
+<!-- User Modal -->
+<div *ngIf="showUserModal" class="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
+  <div class="bg-white rounded-lg w-full max-w-xl p-6">
+    <h4 class="text-lg font-semibold mb-4">{{ editingUserId ? 'Edit User' : 'Add User' }}</h4>
+    <form (ngSubmit)="saveUser()" [formGroup]="userForm" class="space-y-3">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <input formControlName="name" placeholder="Full name" class="px-3 py-2 border rounded" />
+        <input formControlName="email" placeholder="Email" class="px-3 py-2 border rounded" />
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <select formControlName="role" class="px-3 py-2 border rounded">
+          <option value="user">User</option>
+          <option value="manager">Manager</option>
+          <option value="admin">Admin</option>
+        </select>
+        <input formControlName="phone" placeholder="Phone" class="px-3 py-2 border rounded" />
+      </div>
+
+      <div class="flex items-center gap-4">
+        <label class="flex items-center gap-2"><input type="checkbox" formControlName="active" /> Active</label>
+      </div>
+
+      <div class="flex justify-end gap-3">
+        <button type="button" class="px-4 py-2 border rounded" (click)="closeModals()">Cancel</button>
+        <button type="submit" class="px-4 py-2 bg-[var(--color-primary-red)] text-white rounded">{{ editingUserId ? 'Save' : 'Create' }}</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Org Modal -->
+<div *ngIf="showOrgModal" class="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
+  <div class="bg-white rounded-lg w-full max-w-md p-6">
+    <h4 class="text-lg font-semibold mb-4">{{ editingOrgId ? 'Edit Organization' : 'Add Organization' }}</h4>
+    <form (ngSubmit)="saveOrg()" [formGroup]="orgForm" class="space-y-3">
+      <input formControlName="name" placeholder="Organization name" class="px-3 py-2 border rounded w-full" />
+      <input formControlName="address" placeholder="Address" class="px-3 py-2 border rounded w-full" />
+      <input formControlName="contact" placeholder="Contact" class="px-3 py-2 border rounded w-full" />
+
+      <div class="flex justify-end gap-3 mt-3">
+        <button type="button" class="px-4 py-2 border rounded" (click)="closeModals()">Cancel</button>
+        <button type="submit" class="px-4 py-2 bg-[var(--color-primary-red)] text-white rounded">{{ editingOrgId ? 'Save' : 'Create' }}</button>
+      </div>
+    </form>
+  </div>
+</div>

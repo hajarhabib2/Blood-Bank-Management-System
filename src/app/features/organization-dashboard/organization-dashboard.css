@@ -1,0 +1,142 @@
+/* Medical-themed styling for Blood Bank Organization Dashboard */
+
+/* Smooth transitions */
+* {
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Sidebar styling */
+aside {
+  min-height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+/* Main content margin for sidebar */
+.flex-1 {
+  transition: margin-left 0.2s ease;
+}
+
+/* Mobile responsive sidebar */
+@media (max-width: 1023px) {
+  aside {
+    width: 16rem !important;
+    transform: translateX(-100%);
+  }
+  
+  aside.translate-x-0 {
+    transform: translateX(0) !important;
+  }
+  
+  .flex-1 {
+    margin-left: 0 !important;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 768px) and (max-width: 1023px) {
+  aside {
+    width: 20rem !important;
+  }
+}
+
+/* Focus states for accessibility */
+button:focus,
+input:focus,
+select:focus {
+  outline: 2px solid #dc2626;
+  outline-offset: 2px;
+}
+
+/* Responsive table wrapper */
+@media (max-width: 640px) {
+  .overflow-x-auto {
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+  
+  table {
+    font-size: 0.75rem;
+    min-width: 600px;
+  }
+  
+  th, td {
+    padding: 0.5rem 0.75rem;
+  }
+  
+  /* Hide less important columns on mobile */
+  .hide-mobile {
+    display: none;
+  }
+}
+
+/* Better table responsiveness */
+@media (max-width: 768px) {
+  table {
+    font-size: 0.875rem;
+  }
+  
+  th, td {
+    padding: 0.75rem 0.5rem;
+  }
+}
+
+/* Card hover effects */
+.bg-white.rounded-lg.shadow-sm {
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.bg-white.rounded-lg.shadow-sm:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Status badges */
+.rounded-full {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* Modal backdrop */
+.fixed.inset-0.bg-black {
+  backdrop-filter: blur(2px);
+}
+
+/* Loading states */
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none;
+  }
+}
+
+/* High contrast for medical environment */
+@media (prefers-contrast: high) {
+  .bg-white {
+    background-color: #ffffff;
+    border: 1px solid #000000;
+  }
+  
+  .text-gray-900 {
+    color: #000000;
+  }
+  
+  .text-gray-600 {
+    color: #333333;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+

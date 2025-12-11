@@ -1,0 +1,180 @@
+<section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-white to-gray-50 min-h-screen mt-20">
+  <div class="mx-auto max-w-7xl">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center gap-2 bg-red-50 text-red-600 px-4 py-2 rounded-full text-sm font-medium mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+        </svg>
+        Latest Blog & Update
+      </div>
+      <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+        Stay Connected: News, Events & Blood Drive Updates
+      </h2>
+      <p class="text-gray-600 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed">
+        Stay informed about the latest news, events, and updates from our blood donation community. 
+        Learn more about how you can make a difference.
+      </p>
+    </div>
+
+    <!-- Loading State -->
+    @if (loading) {
+      <div class="flex flex-col justify-center items-center py-20">
+        <div class="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-red-600 mb-4"></div>
+        <p class="text-gray-500">Loading articles...</p>
+      </div>
+    }
+
+    <!-- Error State -->
+    @if (error && !loading) {
+      <div class="max-w-2xl mx-auto bg-red-50 border-l-4 border-red-500 p-6 rounded-lg mb-8">
+        <div class="flex items-start">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500 mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <div>
+            <h3 class="text-red-800 font-medium">Unable to load content</h3>
+            <p class="text-red-700 mt-1">{{ error }}</p>
+            <button 
+              (click)="loadBlogs()" 
+              class="mt-3 inline-flex items-center text-red-600 hover:text-red-800 font-medium transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd" />
+              </svg>
+              Try Again
+            </button>
+          </div>
+        </div>
+      </div>
+    }
+
+    <!-- Blog Cards Single Column -->
+    @if (!loading && !error) {
+      @if (blogs.length === 0) {
+        <div class="text-center py-20">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto text-gray-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <h3 class="text-xl font-medium text-gray-500 mb-2">No blogs available</h3>
+          <p class="text-gray-400 max-w-md mx-auto">Check back later for new articles and updates.</p>
+        </div>
+      } @else {
+        <!-- Blog List -->
+        <div class="max-w-4xl mx-auto space-y-8 mb-16">
+          @for (blog of paginatedBlogs; track blog.id) {
+            <article class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+              <div class="flex flex-col md:flex-row h-full">
+                <div class="md:w-2/5 h-64 md:h-auto overflow-hidden relative">
+                  <img 
+                    [src]="blog.image" 
+                    [alt]="blog.title" 
+                    class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                  <div class="absolute top-4 left-4">
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M17.707 9.293a1 1 0 010 1.414l-7 7a1 1 0 01-1.414 0l-7-7A.997.997 0 012 10V5a3 3 0 013-3h5c.256 0 .512.098.707.293l7 7zM5 6a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+                      </svg>
+                      {{ blog.category }}
+                    </span>
+                  </div>
+                </div>
+                <div class="md:w-3/5 p-8 flex flex-col justify-between">
+                  <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 leading-tight hover:text-red-600 transition-colors">
+                      {{ blog.title }}
+                    </h3>
+                    <div class="flex items-center text-sm text-gray-500 mb-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      </svg>
+                      <span>{{ formatDate(blog.date) }}</span>
+                    </div>
+                    <p class="text-gray-600 mb-6 line-clamp-3 leading-relaxed">
+                      {{ blog.excerpt }}
+                    </p>
+                  </div>
+                  <a 
+                    href="#" 
+                    class="inline-flex items-center text-red-600 font-semibold hover:text-red-700 transition-colors group">
+                    Read More
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1 transform group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+          }
+        </div>
+
+        <!-- Pagination -->
+        @if (totalPages > 1) {
+          <div class="flex justify-center items-center gap-2 mt-12">
+            <!-- Previous Button -->
+            <button
+              (click)="previousPage()"
+              [disabled]="currentPage === 1"
+              [class.opacity-50]="currentPage === 1"
+              [class.cursor-not-allowed]="currentPage === 1"
+              class="inline-flex items-center px-4 py-3 bg-white text-gray-700 border border-gray-300 rounded-xl hover:bg-gray-50 hover:border-gray-400 transition-all duration-200 disabled:hover:bg-white disabled:hover:border-gray-300">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              Previous
+            </button>
+
+            <!-- Page Numbers -->
+            @if (currentPage > 3) {
+              <button
+                (click)="goToPage(1)"
+                class="px-4 py-3 bg-white text-gray-700 border border-gray-300 rounded-xl hover:bg-gray-50 transition-colors">
+                1
+              </button>
+              @if (currentPage > 4) {
+                <span class="px-2 text-gray-400">•••</span>
+              }
+            }
+
+            @for (page of getPageNumbers(); track page) {
+              <button
+                (click)="goToPage(page)"
+                [class.bg-red-600]="page === currentPage"
+                [class.text-white]="page === currentPage"
+                [class.border-red-600]="page === currentPage"
+                [class.bg-white]="page !== currentPage"
+                [class.text-gray-700]="page !== currentPage"
+                class="px-4 py-3 border border-gray-300 rounded-xl hover:bg-gray-50 transition-colors font-medium">
+                {{ page }}
+              </button>
+            }
+
+            @if (currentPage < totalPages - 2) {
+              @if (currentPage < totalPages - 3) {
+                <span class="px-2 text-gray-400">•••</span>
+              }
+              <button
+                (click)="goToPage(totalPages)"
+                class="px-4 py-3 bg-white text-gray-700 border border-gray-300 rounded-xl hover:bg-gray-50 transition-colors">
+                {{ totalPages }}
+              </button>
+            }
+
+            <!-- Next Button -->
+            <button
+              (click)="nextPage()"
+              [disabled]="currentPage === totalPages"
+              [class.opacity-50]="currentPage === totalPages"
+              [class.cursor-not-allowed]="currentPage === totalPages"
+              class="inline-flex items-center px-4 py-3 bg-white text-gray-700 border border-gray-300 rounded-xl hover:bg-gray-50 hover:border-gray-400 transition-all duration-200 disabled:hover:bg-white disabled:hover:border-gray-300">
+              Next
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+        }
+      }
+    }
+  </div>
+</section>

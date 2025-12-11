@@ -1,0 +1,166 @@
+<div class="py-18 font-sans">
+
+	<div class="flex flex-col lg:flex-row justify-between items-start mb-10">
+
+		<div class="lg:w-1/2 mb-6 lg:mb-0">
+			<p class="text-primary-red font-semibold text-[24px] mb-2">What We Do</p>
+
+			<h1 class="text-[1rem] sm:text-[2.5rem] font-bold text-gray-800 leading-tight">
+				The Lifesaving Work We Do <br> for Communities in Need
+			</h1>
+		</div>
+
+		<div class="lg:w-1/2 lg:pl-12 text-gray-600 pt-8">
+			<p>
+				We believe that access to critical care is a universal right. Our dedicated team works tirelessly every day to
+				provide
+				essential support to vulnerable communities, from securing lifesaving blood units to offering preventative
+				health
+				screenings, ensuring a healthier and stronger society for everyone.
+			</p>
+		</div>
+	</div>
+
+	<div class="grid grid-cols-3 gap-8 sm:gap-12 mb-8 ">
+		<button (click)="setActiveTab('bloodDonation')" [ngClass]="{
+                'bg-primary-red text-white': activeTab === 'bloodDonation',
+                'bg-gray-100 text-gray-800 hover:bg-gray-200 border-1 border-gray-300': activeTab !== 'bloodDonation'
+            }"
+			class="py-3 px-2 sm:px-10 font-semibold rounded transition duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50">
+			Blood Donation
+		</button>
+
+		<button (click)="setActiveTab('bloodBank')" [ngClass]="{
+                'bg-primary-red text-white': activeTab === 'bloodBank', 
+                'bg-gray-100 text-gray-800 hover:bg-gray-200 border-1 border-gray-300': activeTab !== 'bloodBank'
+            }"
+			class="py-3 px-4 sm:px-10 font-semibold rounded transition duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50">
+			Blood Bank
+		</button>
+
+		<button (click)="setActiveTab('healthCheck')" [ngClass]="{
+                'bg-primary-red text-white': activeTab === 'healthCheck',
+                'bg-gray-100 text-gray-800 hover:bg-gray-200 border-1 border-gray-300': activeTab !== 'healthCheck'
+            }"
+			class="py-3 px-4 sm:px-10 font-semibold rounded transition duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50">
+			Health Check
+		</button>
+	</div>
+
+
+
+	<div class="bg-white p-8 sm:p-10 border border-gray-100 shadow-lg rounded-lg min-h-[420px]">
+
+		@if (activeTab === 'bloodDonation') {
+		<div class="flex flex-col lg:flex-row gap-8">
+
+			<div class="lg:w-[65%]">
+
+				<h2 class="text-2xl font-bold text-gray-800 border-b-2 border-primary-red inline-block pb-3 mb-4">
+					{{ bloodDonationContent.title }}
+				</h2>
+				<p class="text-gray-600 mb-6">
+					{{ bloodDonationContent.body }}
+				</p>
+
+				<ul class="space-y-3">
+					@for (point of bloodDonationContent.points; track point) {
+					<li class="flex items-start text-gray-700">
+						<span class="text-primary-red mr-2 mt-1">
+							<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd"
+									d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+									clip-rule="evenodd"></path>
+							</svg>
+						</span>
+						{{ point }}
+					</li>
+					}
+				</ul>
+
+				<!-- <a href="#" class="mt-6 inline-block text-primary-red font-semibold hover:text-red-800 transition duration-200">
+					Learn More →
+				</a> -->
+			</div>
+
+			<div class="lg:w-[35%] flex justify-center items-center">
+				<img src="images/blood-donation.jpg" alt="Person donating blood"
+					class="rounded-lg shadow-xl w-full h-auto object-cover max-h-96" />
+			</div>
+		</div>
+		}
+		@if (activeTab === 'bloodBank') {
+		<div class="flex flex-col lg:flex-row gap-8">
+
+			<div class="lg:w-[65%]">
+
+				<h2 class="text-2xl font-bold text-gray-800 border-b-2 border-primary-red inline-block pb-3 mb-4">
+					{{ bloodBankContent.title }}
+				</h2>
+				<p class="text-gray-600 mb-6">
+					{{ bloodBankContent.body }}
+				</p>
+
+				<ul class="space-y-3">
+					@for (point of bloodBankContent.points; track point) {
+					<li class="flex items-start text-[15px] text-gray-700">
+						<span class="text-primary-red mr-2 mt-1">
+							<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd"
+									d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+									clip-rule="evenodd"></path>
+							</svg>
+						</span>
+						{{ point }}
+					</li>
+					}
+				</ul>
+			</div>
+
+			<div class="lg:w-[35%] flex justify-center items-center">
+				<img src="images/bloodBank.jpg" alt="Person donating blood"
+					class="rounded-lg shadow-xl w-full h-auto object-cover max-h-96" />
+			</div>
+		</div>
+		}
+
+
+
+
+		@if (activeTab === 'healthCheck') {
+		<div class="flex flex-col lg:flex-row gap-8">
+
+			<div class="lg:w-[65%]">
+
+				<h2 class="text-2xl font-bold text-gray-800 border-b-2 border-primary-red inline-block pb-3 mb-4">
+					{{ healthCheckContent.title }}
+				</h2>
+				<p class="text-gray-600 mb-6 ">
+					{{ healthCheckContent.body }}
+				</p>
+
+				<ul class="space-y-3 ">
+					@for (point of healthCheckContent.points; track point) {
+					<li class="flex items-start text-gray-700">
+						<span class="text-primary-red mr-2 mt-1">
+							<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd"
+									d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+									clip-rule="evenodd"></path>
+							</svg>
+						</span>
+						{{ point }}
+					</li>
+					}
+				</ul>
+			</div>
+
+			<div class="lg:w-[35%] flex justify-center items-center">
+				<img src="images/healthCheck.jpg" alt="Person donating blood"
+					class="rounded-lg shadow-xl w-full h-auto object-cover max-h-96" />
+			</div>
+		</div>
+		}
+
+	</div>
+</div>

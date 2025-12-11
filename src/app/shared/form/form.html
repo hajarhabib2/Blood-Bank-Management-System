@@ -1,0 +1,157 @@
+<div class="min-h-screen  pt-[150px] bg-gray-bg  pb-10 flex justify-center ">
+	<div class="w-full max-w-4xl bg-white shadow-xl rounded-lg overflow-hidden">
+
+		@if(showWelcomeBox && currentUser) {
+		<div class=" p-4 bg-gray-300 rounded shadow text-gray-800">
+			<h2 class="text-lg font-semibold">
+				Welcome, {{ currentUser.fullName }}!
+			</h2>
+			<p>Your blood type: <strong>{{ currentUser.bloodGroup }}</strong></p>
+		</div>
+		}
+		@if (showSuccessPopup) {
+		<div class="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
+			<div class="bg-white p-6 rounded-lg shadow-lg text-center w-[300px]">
+				<h2 class="text-green-600 text-xl font-bold mb-2">Request Sent!</h2>
+				<p class="text-gray-700">Your blood request has been submitted successfully.</p>
+			</div>
+		</div>
+		}
+
+		<!-- Form Header -->
+		<div class="form-gradient p-6 text-white">
+			<h2 class="text-2xl font-semibold">{{ title }}</h2>
+		</div>
+
+		<!-- <div [ngClass]="[
+    gradientType === 'red' ? 'form-gradient' : '',
+    gradientType === 'yellow' ? 'form-gradient-blood-request' : ''
+  ]" class="p-6 text-white">
+			<h2 class="text-2xl font-semibold">{{ title }}</h2>
+		</div> -->
+
+
+		@if(submittedMessage()) {
+		<div class="fixed inset-0 flex items-center justify-center z-50">
+			<div class="bg-green-600 text-white px-6 py-4 rounded shadow-lg text-center">
+				{{ submittedMessage() }}
+			</div>
+		</div>
+		}
+
+		<form [formGroup]="form()" (ngSubmit)="onSubmit()" class="p-8">
+			<div class="grid grid-cols-5 gap-x-5 gap-y-6 items-center">
+
+				@for(field of fields; track field.name) {
+				@if (field.sectionTitle) {
+				<h3 class="col-span-5 text-2xl font-semibold mt-6 mb-2">
+					{{ field.sectionTitle }}
+				</h3>
+				}
+				<!-- Label -->
+				@if(field.type !== 'checkbox') {
+				<label class="col-span-5 sm:col-span-1 text-gray-900">{{ field.label }}</label>
+				}
+
+				<!-- Input Types -->
+				@if (field.type === 'text' || field.type === 'email' || field.type === 'password' || field.type === 'number') {
+				<input [type]="field.type" [formControlName]="field.name" [attr.min]="field.min" [attr.max]="field.max"
+					placeholder="{{ field.placeholder || '' }}"
+					class="col-span-5 sm:col-span-2 tailwind-input placeholder-gray-400" />
+				}
+
+				<!-- Textarea -->
+				@if (field.type === 'textarea') {
+				<textarea [formControlName]="field.name" rows="4" placeholder="{{ field.placeholder || '' }}"
+					class="col-span-5 sm:col-span-2 tailwind-input resize-none placeholder-gray-400"></textarea>
+				}
+
+				<!-- Select -->
+				@if (field.type === 'select') {
+				<select [formControlName]="field.name" class="col-span-5 sm:col-span-2 tailwind-select">
+					<option value="" disabled selected class="text-gray-900">
+						{{ field.placeholder || '' }}
+					</option>
+					@for(opt of field.options; track opt) {
+					<option [value]="opt">{{ opt }}</option>
+					}
+				</select>
+				}
+
+				<!-- File -->
+				@if (field.type === 'file') {
+				<input type="file" (change)="onFileChange($event, field.name)"
+					class="col-span-5 sm:col-span-2 tailwind-input placeholder-gray-400" />
+				}
+				<!-- Date -->
+				@if (field.type === 'date') {
+				<input type="date" [formControlName]="field.name" class="col-span-5 sm:col-span-2 tailwind-input" />
+				}
+
+
+				<!-- Checkbox -->
+				@if(field.type === 'checkbox') {
+				<div class="col-span-5 mt-6 flex items-center">
+					<input type="checkbox" [formControlName]="field.name" id="{{ field.name }}"
+						class="w-4 h-4 text-red-600 border-gray-300 rounded focus:ring-red-500" />
+					<label for="{{ field.name }}" class="ml-2 text-gray-900">
+						{{ field.label }}
+					</label>
+				</div>
+
+				<!-- Errors for checkbox -->
+				<div class="col-span-5 px-3">
+					@if(getFieldControl(field.name)?.touched && getFieldControl(field.name)?.hasError('required')) {
+					<p class="text-red-500 text-sm mt-1">{{ getErrorMessage(field, 'required') }}</p>
+					}
+				</div>
+				}
+
+				<!-- Errors / Success for normal fields -->
+				@if(field.type !== 'checkbox') {
+				<div class="col-span-5 sm:col-span-2 px-3">
+					@if(getFieldControl(field.name)?.touched) {
+
+					<!-- Control-level errors -->
+					@for(err of field.errors; track err.type) {
+					@if(getFieldControl(field.name)?.hasError(err.type)) {
+					<p class="text-red-500 text-sm mt-1">{{ err.msg }}</p>
+					}
+					}
+
+					<!-- Password mismatch (only for confirmPassword) -->
+					@if(field.name === 'confirmPassword' && form().hasError('passwordMismatch') &&
+					getFieldControl('confirmPassword')?.touched) {
+					<p class="text-red-500 text-sm mt-1">
+						{{ getPasswordMismatchMessage(field) }}
+					</p>
+					}
+
+					<!-- Success Message -->
+					@if(field.successMessage && !getFieldControl(field.name)?.errors && getFieldControl(field.name)?.value &&
+					!(field.name === 'confirmPassword' && form().hasError('passwordMismatch'))) {
+					<p class="text-green-500 text-sm mt-1">{{ field.successMessage }}</p>
+					}
+
+					}
+				</div>
+				}
+
+				}
+
+				<!-- Submit Button -->
+				<div class="flex justify-end col-span-5 mt-6">
+					<button type="submit" [disabled]="form().invalid" class="button-submit">
+						Submit
+						<svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+						</svg>
+					</button>
+				</div>
+
+			</div>
+
+		</form>
+
+	</div>
+</div>

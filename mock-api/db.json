@@ -1,0 +1,1053 @@
+{
+  "inventory": [
+    {
+      "id": "INV-001",
+      "bloodType": "A+",
+      "collectedDate": "2025-05-18T09:00:00.000Z",
+      "expiryDate": "2025-06-18T00:00:00.000Z",
+      "status": "available",
+      "donorId": "DON-001",
+      "location": "Main Storage",
+      "organizationId": "ORG-001"
+    },
+    {
+      "id": "INV-002",
+      "bloodType": "O-",
+      "collectedDate": "2025-05-16T08:30:00.000Z",
+      "expiryDate": "2025-06-10T00:00:00.000Z",
+      "status": "reserved",
+      "donorId": "DON-002",
+      "location": "Cold Room B",
+      "organizationId": "ORG-001"
+    },
+    {
+      "id": "INV-003",
+      "bloodType": "B+",
+      "collectedDate": "2025-05-10T10:15:00.000Z",
+      "expiryDate": "2025-06-05T00:00:00.000Z",
+      "status": "available",
+      "donorId": "DON-003",
+      "location": "Cold Room A",
+      "organizationId": "ORG-001"
+    },
+    {
+      "id": "c208",
+      "bloodType": "A+",
+      "collectedDate": "2025-11-21T07:25:11.354Z",
+      "expiryDate": "2026-01-02T07:25:11.354Z",
+      "status": "available",
+      "donorId": "DON-001",
+      "location": "Main Storage",
+      "organizationId": "ORG-001"
+    },
+    {
+      "id": "1d87",
+      "bloodType": "O+",
+      "collectedDate": "2025-11-21T07:40:25.160Z",
+      "expiryDate": "2026-01-02T07:40:25.160Z",
+      "status": "available",
+      "donorId": "01c4",
+      "location": "Cold Room A",
+      "organizationId": "ORG-001"
+    },
+    {
+      "id": "INV-004",
+      "bloodType": "AB-",
+      "collectedDate": "2025-05-20T11:00:00.000Z",
+      "expiryDate": "2025-06-20T00:00:00.000Z",
+      "status": "available",
+      "donorId": "DON-005",
+      "location": "Main Storage",
+      "organizationId": "ORG-001"
+    },
+    {
+      "id": "INV-005",
+      "bloodType": "A-",
+      "collectedDate": "2025-05-15T14:20:00.000Z",
+      "expiryDate": "2025-06-12T00:00:00.000Z",
+      "status": "used",
+      "donorId": "DON-006",
+      "location": "N/A",
+      "organizationId": "ORG-001"
+    },
+    {
+      "id": "INV-006",
+      "bloodType": "O+",
+      "collectedDate": "2025-05-22T16:45:00.000Z",
+      "expiryDate": "2025-06-22T00:00:00.000Z",
+      "status": "quarantined",
+      "donorId": "DON-007",
+      "location": "Quarantine Zone",
+      "organizationId": "ORG-001"
+    },
+    {
+      "id": "INV-007",
+      "bloodType": "B-",
+      "collectedDate": "2025-05-12T13:10:00.000Z",
+      "expiryDate": "2025-06-07T00:00:00.000Z",
+      "status": "expired",
+      "donorId": "DON-008",
+      "location": "Expired Disposal",
+      "organizationId": "ORG-001"
+    },
+    {
+      "id": "INV-008",
+      "bloodType": "AB+",
+      "collectedDate": "2025-05-25T10:30:00.000Z",
+      "expiryDate": "2025-06-25T00:00:00.000Z",
+      "status": "reserved",
+      "donorId": "DON-009",
+      "location": "Cold Room B",
+      "organizationId": "ORG-001"
+    },
+    {
+      "id": "5248",
+      "bloodType": "AB+",
+      "collectedDate": "2025-11-21T08:08:43.156Z",
+      "expiryDate": "2026-01-02T08:08:43.156Z",
+      "status": "available",
+      "donorId": "DON-009",
+      "organizationId": "ORG-001"
+    },
+    {
+      "id": "ec88",
+      "bloodType": "O-",
+      "collectedDate": "2025-11-21T08:10:58.456Z",
+      "expiryDate": "2026-01-02T08:10:58.456Z",
+      "status": "available",
+      "donorId": "DON-010",
+      "organizationId": "ORG-001"
+    },
+    {
+      "id": "df34",
+      "bloodType": "A+",
+      "collectedDate": "2025-11-21T13:41:40.482Z",
+      "expiryDate": "2026-01-02T13:41:40.482Z",
+      "status": "available",
+      "donorId": "DON-001",
+      "organizationId": "ORG-001",
+      "location": "Main Storage"
+    },
+    {
+      "id": "1b47",
+      "bloodType": "A+",
+      "collectedDate": "2025-11-21T14:00:23.530Z",
+      "expiryDate": "2026-01-02T14:00:23.530Z",
+      "status": "available",
+      "donorId": "DON-001",
+      "organizationId": "ORG-001",
+      "location": "Main Storage"
+    }
+  ],
+  "donors": [
+    {
+      "id": "DON-001",
+      "name": "Ahmed Mohamed",
+      "email": "ahmed@example.com",
+      "phone": "01012345678",
+      "bloodType": "A+",
+      "donationDate": "2025-05-21T08:00:00.000Z",
+      "donationTime": "08:00",
+      "status": "completed",
+      "eligibilityStatus": "eligible",
+      "lastDonationDate": "2025-11-21T07:25:11.278Z",
+      "totalDonations": 7,
+      "organizationId": "ORG-001"
+    },
+    {
+      "id": "DON-002",
+      "name": "Sara Ali",
+      "email": "sara@example.com",
+      "phone": "01087654321",
+      "bloodType": "O-",
+      "donationDate": "2025-05-21T09:30:00.000Z",
+      "donationTime": "09:30",
+      "status": "completed",
+      "eligibilityStatus": "eligible",
+      "lastDonationDate": "2025-05-21T09:30:00.000Z",
+      "totalDonations": 6,
+      "organizationId": "ORG-001"
+    },
+    {
+      "id": "DON-003",
+      "name": "Mahmoud Fathi",
+      "email": "mahmoud@example.com",
+      "phone": "01055556666",
+      "bloodType": "B+",
+      "donationDate": "2025-05-22T11:00:00.000Z",
+      "donationTime": "11:00",
+      "status": "completed",
+      "eligibilityStatus": "pending",
+      "lastDonationDate": "2025-11-21T07:17:37.999Z",
+      "totalDonations": 3,
+      "organizationId": "ORG-001"
+    },
+    {
+      "id": "01c4",
+      "name": "Mahmoud Gamal",
+      "email": "mahmoudg.dev@gmail.com",
+      "phone": "01017579836",
+      "bloodType": "O+",
+      "donationDate": "2025-11-21T00:00:00.000Z",
+      "donationTime": "09:44",
+      "status": "completed",
+      "eligibilityStatus": "eligible",
+      "totalDonations": 1,
+      "lastDonationDate": "2025-11-21T07:40:25.149Z",
+      "organizationId": "ORG-001"
+    },
+    {
+      "id": "DON-005",
+      "name": "Fatima Zahra",
+      "email": "fatima.z@example.com",
+      "phone": "01011112222",
+      "bloodType": "AB-",
+      "donationDate": "2025-05-20T11:00:00.000Z",
+      "donationTime": "11:00",
+      "status": "completed",
+      "eligibilityStatus": "eligible",
+      "lastDonationDate": "2025-05-20T11:00:00.000Z",
+      "totalDonations": 2,
+      "organizationId": "ORG-001"
+    },
+    {
+      "id": "DON-006",
+      "name": "Khaled Samy",
+      "email": "khaled.s@example.com",
+      "phone": "01033334444",
+      "bloodType": "A-",
+      "donationDate": "2025-05-15T14:20:00.000Z",
+      "donationTime": "14:20",
+      "status": "completed",
+      "eligibilityStatus": "ineligible",
+      "lastDonationDate": "2025-05-15T14:20:00.000Z",
+      "totalDonations": 4,
+      "organizationId": "ORG-001"
+    },
+    {
+      "id": "DON-007",
+      "name": "Nourhan Essam",
+      "email": "nourhan.e@example.com",
+      "phone": "01055557777",
+      "bloodType": "O+",
+      "donationDate": "2025-05-22T16:45:00.000Z",
+      "donationTime": "16:45",
+      "status": "deferred",
+      "eligibilityStatus": "ineligible",
+      "lastDonationDate": "2024-11-22T16:45:00.000Z",
+      "totalDonations": 5,
+      "organizationId": "ORG-001"
+    },
+    {
+      "id": "DON-008",
+      "name": "Omar Tarek",
+      "email": "omar.t@example.com",
+      "phone": "01066668888",
+      "bloodType": "B-",
+      "donationDate": "2025-05-12T13:10:00.000Z",
+      "donationTime": "13:10",
+      "status": "completed",
+      "eligibilityStatus": "eligible",
+      "lastDonationDate": "2025-05-12T13:10:00.000Z",
+      "totalDonations": 8,
+      "organizationId": "ORG-001"
+    },
+    {
+      "id": "DON-009",
+      "name": "Lina Magdy",
+      "email": "lina.m@example.com",
+      "phone": "01077779999",
+      "bloodType": "AB+",
+      "donationDate": "2025-05-25T10:30:00.000Z",
+      "donationTime": "10:30",
+      "status": "completed",
+      "eligibilityStatus": "pending",
+      "lastDonationDate": "2025-11-21T08:08:43.138Z",
+      "totalDonations": 4,
+      "organizationId": "ORG-001"
+    },
+    {
+      "id": "DON-010",
+      "name": "Yasmin Hani",
+      "email": "yasmin.h@example.com",
+      "phone": "01088880000",
+      "bloodType": "O-",
+      "donationDate": "2025-05-28T09:15:00.000Z",
+      "donationTime": "09:15",
+      "status": "completed",
+      "eligibilityStatus": "eligible",
+      "lastDonationDate": "2025-11-21T08:10:58.450Z",
+      "totalDonations": 7,
+      "organizationId": "ORG-001"
+    }
+  ],
+  "requests": [
+    {
+      "id": "REQ-001",
+      "requestNumber": "REQ-001",
+      "patientName": "Hassan Ali",
+      "hospitalName": "Cairo Hospital",
+      "bloodType": "O-",
+      "unitsNeeded": 2,
+      "priority": "urgent",
+      "requestedDate": "2025-05-21T07:30:00.000Z",
+      "requestedTime": "07:30",
+      "status": "in_transit",
+      "location": {
+        "address": "Cairo, Nasr City"
+      },
+      "organizationId": "ORG-001"
+    },
+    {
+      "id": "REQ-002",
+      "requestNumber": "REQ-002",
+      "patientName": "Mona Samir",
+      "hospitalName": "El Salam Hospital",
+      "bloodType": "A+",
+      "unitsNeeded": 1,
+      "priority": "high",
+      "requestedDate": "2025-05-18T10:00:00.000Z",
+      "requestedTime": "10:00",
+      "status": "completed",
+      "location": {
+        "address": "Fifth Settlement"
+      },
+      "organizationId": "ORG-001"
+    },
+    {
+      "id": "REQ-003",
+      "requestNumber": "REQ-003",
+      "patientName": "Youssef Adel",
+      "hospitalName": "Dar El Fouad",
+      "bloodType": "B+",
+      "unitsNeeded": 3,
+      "priority": "medium",
+      "requestedDate": "2025-05-17T12:15:00.000Z",
+      "requestedTime": "12:15",
+      "status": "completed",
+      "location": {
+        "address": "Giza"
+      },
+      "organizationId": "ORG-001"
+    },
+    {
+      "id": "REQ-004",
+      "requestNumber": "REQ-004",
+      "patientName": "Rania Sobhy",
+      "hospitalName": "Ain Shams Hospital",
+      "bloodType": "AB-",
+      "unitsNeeded": 1,
+      "priority": "urgent",
+      "requestedDate": "2025-05-23T08:45:00.000Z",
+      "requestedTime": "08:45",
+      "status": "pending",
+      "location": {
+        "address": "Abbaseya, Cairo"
+      },
+      "organizationId": "ORG-001"
+    },
+    {
+      "id": "REQ-005",
+      "requestNumber": "REQ-005",
+      "patientName": "Amir Naguib",
+      "hospitalName": "Kasr Al Ainy",
+      "bloodType": "A-",
+      "unitsNeeded": 2,
+      "priority": "high",
+      "requestedDate": "2025-05-22T14:20:00.000Z",
+      "requestedTime": "14:20",
+      "status": "completed",
+      "location": {
+        "address": "Manial, Cairo"
+      },
+      "organizationId": "ORG-001"
+    },
+    {
+      "id": "REQ-006",
+      "requestNumber": "REQ-006",
+      "patientName": "Dina Wael",
+      "hospitalName": "Saudi German Hospital",
+      "bloodType": "O+",
+      "unitsNeeded": 3,
+      "priority": "medium",
+      "requestedDate": "2025-05-24T11:30:00.000Z",
+      "requestedTime": "11:30",
+      "status": "pending",
+      "location": {
+        "address": "Alexandria Desert Road"
+      },
+      "organizationId": "ORG-001"
+    },
+    {
+      "id": "94d5",
+      "hospitalName": "El Salam",
+      "patientName": "Nasser Ali",
+      "bloodType": "A-",
+      "unitsNeeded": 1,
+      "priority": "high",
+      "location": {
+        "address": "El Salam rood strrt"
+      },
+      "requestedDate": "2025-11-21T13:04:58.139Z",
+      "requestedTime": "15:04",
+      "status": "pending",
+      "organizationId": "ORG-001",
+      "requestNumber": "REQ-1763730298139"
+    },
+    {
+      "id": "e5b7",
+      "hospitalName": "Delta Hospital",
+      "patientName": "Maha Ali",
+      "bloodType": "B-",
+      "unitsNeeded": 1,
+      "priority": "medium",
+      "location": {
+        "address": "Cairo"
+      },
+      "requestedDate": "2025-12-03T19:25:22.855Z",
+      "requestedTime": "21:25",
+      "status": "pending",
+      "organizationId": "ORG-001",
+      "requestNumber": "REQ-1764789922855"
+    }
+  ],
+  "deliveries": [
+    {
+      "id": "DEL-001",
+      "requestId": "REQ-001",
+      "requestNumber": "REQ-001",
+      "driverName": "Omar Nasser",
+      "vehicleId": "VAN-03",
+      "status": "in_transit",
+      "scheduledTime": "2025-11-21T07:59:46.196Z",
+      "estimatedArrival": "2025-11-21T08:30:01.115Z",
+      "destination": {
+        "name": "Cairo Hospital",
+        "address": "Nasr City"
+      },
+      "currentLocation": {
+        "lat": 30.0625,
+        "lng": 31.2497
+      },
+      "actualArrival": "2025-11-21T07:59:50.170Z",
+      "organizationId": "ORG-001"
+    },
+    {
+      "id": "DEL-002",
+      "requestId": "REQ-002",
+      "requestNumber": "REQ-002",
+      "driverName": "Laila Farid",
+      "vehicleId": "BIKE-12",
+      "status": "delivered",
+      "scheduledTime": "2025-11-21T07:52:40.939Z",
+      "destination": {
+        "name": "El Salam Hospital",
+        "address": "New Cairo"
+      },
+      "estimatedArrival": "2025-11-21T08:22:42.934Z",
+      "actualArrival": "2025-11-21T08:11:30.552Z",
+      "organizationId": "ORG-001"
+    },
+    {
+      "id": "07bb",
+      "requestId": "REQ-003",
+      "requestNumber": "REQ-003",
+      "driverName": "Auto Dispatcher",
+      "vehicleId": "AUTO-VAN",
+      "status": "delivered",
+      "scheduledTime": "2025-11-21T07:49:40.523Z",
+      "estimatedArrival": "2025-11-21T08:20:04.956Z",
+      "destination": {
+        "name": "Dar El Fouad",
+        "address": "Giza"
+      },
+      "actualArrival": "2025-11-21T08:11:16.449Z",
+      "organizationId": "ORG-001"
+    },
+    {
+      "id": "DEL-004",
+      "requestId": "REQ-005",
+      "requestNumber": "REQ-005",
+      "driverName": "Hany Sobhy",
+      "vehicleId": "VAN-01",
+      "status": "delivered",
+      "scheduledTime": "2025-11-21T08:06:59.412Z",
+      "estimatedArrival": "2025-11-21T08:37:07.730Z",
+      "destination": {
+        "name": "Kasr Al Ainy",
+        "address": "Manial, Cairo"
+      },
+      "actualArrival": "2025-11-21T08:07:36.258Z",
+      "organizationId": "ORG-001"
+    },
+    {
+      "id": "DEL-005",
+      "requestId": "REQ-006",
+      "requestNumber": "REQ-006",
+      "driverName": "Ibrahim Fawzy",
+      "vehicleId": "VAN-07",
+      "status": "scheduled",
+      "scheduledTime": "2025-05-24T12:30:00.000Z",
+      "estimatedArrival": "2025-05-24T13:15:00.000Z",
+      "destination": {
+        "name": "Saudi German Hospital",
+        "address": "Alexandria Desert Road"
+      },
+      "organizationId": "ORG-001"
+    }
+  ],
+  "alerts": [
+    {
+      "id": "ALT-001",
+      "type": "low_stock",
+      "severity": "critical",
+      "title": "Low stock for O-",
+      "message": "Only one O- unit remaining in inventory.",
+      "bloodType": "O-",
+      "createdAt": "2025-05-21T05:00:00.000Z",
+      "acknowledged": false,
+      "organizationId": "ORG-001"
+    },
+    {
+      "id": "ALT-002",
+      "type": "near_expiry",
+      "severity": "warning",
+      "title": "A+ unit expiring soon",
+      "message": "INV-001 will expire within 7 days.",
+      "bloodType": "A+",
+      "createdAt": "2025-05-20T12:00:00.000Z",
+      "acknowledged": false,
+      "organizationId": "ORG-001"
+    },
+    {
+      "id": "ALT-003",
+      "type": "donor_eligibility",
+      "severity": "info",
+      "title": "Donor Eligibility Updated",
+      "message": "Donor Mahmoud Fathi (DON-003) eligibility is pending review.",
+      "bloodType": "B+",
+      "createdAt": "2025-05-22T11:05:00.000Z",
+      "acknowledged": true,
+      "organizationId": "ORG-001"
+    },
+    {
+      "id": "ALT-004",
+      "type": "delivery_delayed",
+      "severity": "high",
+      "title": "Delivery DEL-001 is delayed",
+      "message": "Delivery to Cairo Hospital is experiencing unexpected delays.",
+      "bloodType": "O-",
+      "createdAt": "2025-05-21T08:15:00.000Z",
+      "acknowledged": false,
+      "organizationId": "ORG-001"
+    },
+    {
+      "id": "ALT-005",
+      "type": "quarantine",
+      "severity": "medium",
+      "title": "Unit placed in quarantine",
+      "message": "Unit INV-006 (O+) has been quarantined for further testing.",
+      "bloodType": "O+",
+      "createdAt": "2025-05-22T17:30:00.000Z",
+      "acknowledged": true,
+      "organizationId": "ORG-001"
+    }
+  ],
+  "reports": [
+    {
+      "id": "REP-001",
+      "date": "2025-05-20",
+      "totalDonations": 8,
+      "totalRequests": 5,
+      "completedDeliveries": 4,
+      "inventoryChanges": [
+        {
+          "bloodType": "A+",
+          "added": 2,
+          "used": 1,
+          "expired": 0
+        },
+        {
+          "bloodType": "O-",
+          "added": 1,
+          "used": 1,
+          "expired": 0
+        },
+        {
+          "bloodType": "B+",
+          "added": 1,
+          "used": 0,
+          "expired": 0
+        }
+      ],
+      "organizationId": "ORG-001"
+    },
+    {
+      "id": "REP-002",
+      "date": "2025-05-21",
+      "totalDonations": 12,
+      "totalRequests": 8,
+      "completedDeliveries": 6,
+      "inventoryChanges": [
+        {
+          "bloodType": "A+",
+          "added": 3,
+          "used": 2,
+          "expired": 0
+        },
+        {
+          "bloodType": "O-",
+          "added": 2,
+          "used": 1,
+          "expired": 0
+        },
+        {
+          "bloodType": "B+",
+          "added": 1,
+          "used": 1,
+          "expired": 0
+        },
+        {
+          "bloodType": "AB-",
+          "added": 1,
+          "used": 0,
+          "expired": 0
+        },
+        {
+          "bloodType": "O+",
+          "added": 2,
+          "used": 1,
+          "expired": 0
+        }
+      ],
+      "organizationId": "ORG-001"
+    },
+    {
+      "id": "REP-003",
+      "date": "2025-05-22",
+      "totalDonations": 9,
+      "totalRequests": 6,
+      "completedDeliveries": 5,
+      "inventoryChanges": [
+        {
+          "bloodType": "A+",
+          "added": 2,
+          "used": 1,
+          "expired": 0
+        },
+        {
+          "bloodType": "O-",
+          "added": 1,
+          "used": 2,
+          "expired": 0
+        },
+        {
+          "bloodType": "B+",
+          "added": 1,
+          "used": 0,
+          "expired": 0
+        },
+        {
+          "bloodType": "A-",
+          "added": 1,
+          "used": 1,
+          "expired": 0
+        },
+        {
+          "bloodType": "O+",
+          "added": 1,
+          "used": 0,
+          "expired": 0
+        }
+      ],
+      "organizationId": "ORG-001"
+    }
+  ],
+  "organizations": [
+    {
+      "id": "ORG-001",
+      "name": "Main Blood Bank",
+      "address": "Cairo",
+      "branches": 3
+    },
+    {
+      "id": "ORG-002",
+      "name": "Alexandria Blood Center",
+      "address": "Alexandria",
+      "branches": 2
+    },
+    {
+      "id": "ORG-003",
+      "name": "Giza Regional Bank",
+      "address": "Giza",
+      "branches": 1
+    }
+  ],
+  "users": [
+    {
+      "id": "USR-001",
+      "name": "Admin User",
+      "email": "admin@bloodbank.com",
+      "password": "admin1234",
+      "role": "admin",
+      "organizationId": "ORG-001"
+    },
+    {
+      "id": "USR-002",
+      "name": "Lab Technician",
+      "email": "lab@bloodbank.com",
+      "password": "lab1234",
+      "role": "lab",
+      "organizationId": "ORG-001"
+    },
+    {
+      "id": "USR-003",
+      "name": "Coordinator",
+      "email": "coordinator@bloodbank.com",
+      "password": "123456",
+      "role": "coordinator",
+      "organizationId": "ORG-001"
+    },
+    {
+      "id": "USR-004",
+      "name": "View Only User",
+      "email": "viewer@bloodbank.com",
+      "password": "123456",
+      "role": "viewer",
+      "organizationId": "ORG-001"
+    },
+    {
+      "id": "USR-005",
+      "name": "Org User",
+      "email": "org@bloodbank.com",
+      "password": "org1234",
+      "role": "organization",
+      "organizationId": "ORG-005"
+    }
+  ],
+  "accounts": [
+    {
+      "id": "2500",
+      "email": "safia@gmail.com",
+      "password": "123456",
+      "role": "recipient"
+    },
+    {
+      "id": "9e14",
+      "email": "sally@gmail.com",
+      "password": "123123",
+      "role": "recipient"
+    },
+    {
+      "id": "8b1b",
+      "email": "mody@gmail.com",
+      "password": "123123",
+      "role": "recipient"
+    },
+    {
+      "id": "4ddc",
+      "email": "saber@gmail.com",
+      "password": "123123",
+      "role": "recipient"
+    },
+    {
+      "id": "41b0",
+      "email": "marwa@gmail.com",
+      "password": "123123",
+      "role": "recipient"
+    }
+  ],
+  "recipients": [
+    {
+      "id": "fe2b",
+      "fullName": "Safia",
+      "phone": "2222222222",
+      "governorate": "Assiut",
+      "district": "Shebin",
+      "age": "25",
+      "gender": "Female",
+      "bloodGroup": "AB-",
+      "agreeTerms": true,
+      "registrationDate": "2025-12-05T20:51:55.101Z",
+      "status": "pending",
+      "userId": "2500"
+    },
+    {
+      "id": "22c3",
+      "fullName": "Sally",
+      "phone": "101234567",
+      "governorate": "Assiut",
+      "district": "assiut",
+      "age": "33",
+      "gender": "Female",
+      "bloodGroup": "AB+",
+      "agreeTerms": true,
+      "registrationDate": "2025-12-05T21:29:06.972Z",
+      "status": "pending",
+      "userId": "9e14"
+    },
+    {
+      "id": "1fb9",
+      "fullName": "Mohammad Salem",
+      "phone": "0101111111",
+      "governorate": "Qaliubiya",
+      "district": "Banha",
+      "age": "25",
+      "gender": "Male",
+      "bloodGroup": "AB+",
+      "idCard": null,
+      "agreeTerms": true,
+      "registrationDate": "2025-12-05T21:41:14.079Z",
+      "status": "pending",
+      "userId": "8b1b"
+    },
+    {
+      "id": "bb88",
+      "fullName": "saber",
+      "phone": "011111112",
+      "governorate": "Minya",
+      "district": "Minya",
+      "age": "19",
+      "gender": "Male",
+      "bloodGroup": "AB+",
+      "idCard": null,
+      "agreeTerms": true,
+      "userId": "4ddc"
+    },
+    {
+      "id": "6cf3",
+      "fullName": "Marwa",
+      "phone": "010123123123",
+      "governorate": "Cairo",
+      "district": "Nasr City",
+      "age": "22",
+      "gender": "Female",
+      "bloodGroup": "AB+",
+      "idCard": null,
+      "agreeTerms": true,
+      "userId": "41b0"
+    }
+  ],
+  "bloodRequests": [
+    {
+      "id": "REQ-ui25v7",
+      "userId": "8b1b",
+      "unitsNeeded": "5",
+      "requestReason": "Emergency",
+      "neededBefore": "2025-12-18",
+      "status": "Pending",
+      "requestedAt": "2025-12-06T16:44:08.679Z"
+    },
+    {
+      "id": "REQ-hka46g",
+      "userId": "8b1b",
+      "unitsNeeded": "1",
+      "requestReason": "Surgery",
+      "neededBefore": "2025-12-31",
+      "status": "Pending",
+      "requestedAt": "2025-12-06T16:49:15.621Z"
+    },
+    {
+      "id": "REQ-33yw7s",
+      "userId": "8b1b",
+      "unitsNeeded": "2",
+      "requestReason": "Surgery",
+      "neededBefore": "2025-12-23",
+      "status": "Pending",
+      "requestedAt": "2025-12-06T17:07:54.885Z"
+    },
+    {
+      "id": "REQ-f3ystk",
+      "userId": "9e14",
+      "unitsNeeded": "1",
+      "requestReason": "Critical Condition",
+      "neededBefore": "2025-12-19",
+      "status": "Pending",
+      "requestedAt": "2025-12-06T17:12:59.434Z"
+    },
+    {
+      "id": "REQ-ukr9v9",
+      "userId": "9e14",
+      "unitsNeeded": "1",
+      "requestReason": "Emergency",
+      "neededBefore": "2025-12-01",
+      "status": "Pending",
+      "requestedAt": "2025-12-06T17:18:20.689Z"
+    },
+    {
+      "id": "REQ-tdc2to",
+      "userId": "41b0",
+      "unitsNeeded": "2",
+      "requestReason": "Surgery",
+      "neededBefore": "2025-12-11",
+      "status": "Pending",
+      "requestedAt": "2025-12-06T18:26:52.105Z"
+    }
+  ],
+  "donations": [
+    {
+      "id": "DONATION-001",
+      "organizationId": "ORG-001",
+      "donorId": "DON-001",
+      "donorName": "Ahmed Mohamed",
+      "bloodType": "A+",
+      "donationDate": "2025-05-21T08:05:00.000Z",
+      "donationTime": "08:05",
+      "unitsCollected": 1,
+      "status": "completed",
+      "location": "Main Donation Center",
+      "notes": "Routine donation"
+    },
+    {
+      "id": "DONATION-002",
+      "organizationId": "ORG-001",
+      "donorId": "DON-002",
+      "donorName": "Sara Ali",
+      "bloodType": "O-",
+      "donationDate": "2025-05-21T09:45:00.000Z",
+      "donationTime": "09:45",
+      "unitsCollected": 1,
+      "status": "completed",
+      "location": "New Cairo Center",
+      "notes": "Emergency match"
+    },
+    {
+      "id": "DONATION-003",
+      "organizationId": "ORG-001",
+      "donorId": "DON-003",
+      "donorName": "Mahmoud Fathi",
+      "bloodType": "B+",
+      "donationDate": "2025-05-22T11:20:00.000Z",
+      "donationTime": "11:20",
+      "unitsCollected": 1,
+      "status": "completed",
+      "location": "Giza Mobile Unit",
+      "notes": "Corporate drive"
+    },
+    {
+      "id": "DONATION-004",
+      "organizationId": "ORG-001",
+      "donorId": null,
+      "donorName": "Walk-in Emergency",
+      "bloodType": "AB+",
+      "donationDate": "2025-05-23T13:10:00.000Z",
+      "donationTime": "13:10",
+      "unitsCollected": 1,
+      "status": "completed",
+      "location": "Main Donation Center",
+      "notes": "No ID provided"
+    },
+    {
+      "id": "DONATION-005",
+      "organizationId": "ORG-002",
+      "donorId": "DON-005",
+      "donorName": "Fatima Zahra",
+      "bloodType": "AB-",
+      "donationDate": "2025-05-20T11:15:00.000Z",
+      "donationTime": "11:15",
+      "unitsCollected": 1,
+      "status": "completed",
+      "location": "Main Donation Center",
+      "notes": "Scheduled donation"
+    },
+    {
+      "id": "DONATION-006",
+      "organizationId": "ORG-002",
+      "donorId": null,
+      "donorName": "Corporate Drive",
+      "bloodType": "O+",
+      "donationDate": "2025-05-24T15:00:00.000Z",
+      "donationTime": "15:00",
+      "unitsCollected": 2,
+      "status": "scheduled",
+      "location": "Alexandria Outreach",
+      "notes": "Awaiting lab screening"
+    }
+  ],
+  "blogs": [
+    {
+      "id": "BLOG-001",
+      "title": "How Often Can You Donate Blood? A Complete Guide",
+      "date": "2025-02-24",
+      "category": "Uncategorized",
+      "image": "images/blog-1.jpg",
+      "excerpt": "You can donate whole blood every 56 days, but the frequency varies depending on the type of donation. This guide explains the recommended intervals and why your body needs time to replenish essential components after each donation.",
+      "content": "Full article content about blood donation frequency..."
+    },
+    {
+      "id": "BLOG-002",
+      "title": "Who Can Donate Blood? Eligibility & Requirements Explained",
+      "date": "2025-02-24",
+      "category": "Uncategorized",
+      "image": "images/blog-2.jpg",
+      "excerpt": "Blood donation has clear health and safety requirements. This article walks you through age limits, minimum weight, medical conditions, travel restrictions, and everything you need to know before your first donation.",
+      "content": "Full article content about blood donation eligibility..."
+    },
+    {
+      "id": "BLOG-003",
+      "title": "Can Donating Blood Improve Your Health? Here's What Science Says",
+      "date": "2025-02-24",
+      "category": "Health & Benefits",
+      "image": "images/blog-3.jpg",
+      "excerpt": "Studies show that blood donation may support heart health, reduce excess iron levels, and enhance overall wellness. Here's what researchers have discovered about the long-term benefits for regular donors.",
+      "content": "Full article content about health benefits of blood donation..."
+    },
+    {
+      "id": "BLOG-004",
+      "title": "Understanding Blood Types: A Comprehensive Guide",
+      "date": "2025-02-20",
+      "category": "Education",
+      "image": "images/blog-1.jpg",
+      "excerpt": "Learn about the different blood types, compatibility, and why certain blood types are more in demand than others. Understanding your blood type is crucial for effective donation.",
+      "content": "Full article content about blood types..."
+    },
+    {
+      "id": "BLOG-005",
+      "title": "The Blood Donation Process: What to Expect",
+      "date": "2025-02-18",
+      "category": "Education",
+      "image": "images/blog-2.jpg",
+      "excerpt": "First-time donor? This step-by-step guide explains everything you need to know about the donation process, from registration to post-donation care.",
+      "content": "Full article content about the donation process..."
+    },
+    {
+      "id": "BLOG-006",
+      "title": "Emergency Blood Shortages: How You Can Help",
+      "date": "2025-02-15",
+      "category": "News",
+      "image": "images/blog-3.jpg",
+      "excerpt": "During emergency situations, blood banks face critical shortages. Discover how regular donations can help maintain adequate blood supply and save lives during crises.",
+      "content": "Full article content about emergency blood shortages..."
+    }
+  ],
+  "bloodBanks": [
+    {
+      "id": "BANK-001",
+      "name": "Cairo Central Blood Bank",
+      "address": "Cairo Hospital Building, Nasr City, Cairo, Egypt",
+      "contact": "02-123456789",
+      "branches": 3
+    },
+    {
+      "id": "BANK-002",
+      "name": "Alexandria Regional Blood Center",
+      "address": "Medical Complex, Corniche Road, Alexandria, Egypt",
+      "contact": "03-987654321",
+      "branches": 2
+    },
+    {
+      "id": "BANK-003",
+      "name": "Giza Blood Donation Center",
+      "address": "Giza Hospital Building, Pyramids Road, Giza, Egypt",
+      "contact": "02-555555555",
+      "branches": 1
+    },
+    {
+      "id": "BANK-004",
+      "name": "New Cairo Blood Bank",
+      "address": "Fifth Settlement, New Cairo, Cairo, Egypt",
+      "contact": "02-111111111",
+      "branches": 1
+    }
+  ]
+}

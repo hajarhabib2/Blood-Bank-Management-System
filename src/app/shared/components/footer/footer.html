@@ -1,0 +1,85 @@
+<footer class="bg-black-bg text-white pt-12 pb-6">
+	<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 border-b border-gray-700 pb-10 mb-8">
+
+			<div class="lg:col-span-1">
+				<a class="flex items-center space-x-2 cursor-pointer" routerLink="/">
+					<img src="images/bloodlinklogo.png" alt="BloodLink Logo" />
+				</a>
+				<p class="text-gray-400 text-sm max-w-xs leading-relaxed">
+					BloodLink is a community-driven platform connecting blood donors with patients in urgent need. Saving lives starts with a single donation.
+				</p>
+			</div>
+
+			<div class="lg:col-span-1">
+				<h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+				<ul class="space-y-2 text-gray-400 text-sm">
+					<li><a routerLink="/about" class="hover:text-red-500 transition-colors">About Us</a></li>
+					<li><a routerLink="/donate" class="hover:text-red-500 transition-colors">Find Blood</a></li>
+					<li><a routerLink="/faqs" class="hover:text-red-500 transition-colors">FAQs</a></li>
+				</ul>
+			</div>
+
+			<div class="lg:col-span-1">
+				<h3 class="text-xl font-semibold mb-4">Contact Info</h3>
+				<ul class="space-y-2 text-gray-400 text-sm">
+					<li>+20 111 234 5678</li>
+					<li>
+						<a href="mailto:contact@bloodlink.org" class="hover:text-red-500 transition-colors">
+							contact@bloodlink.org
+						</a>
+					</li>
+					<li>Cairo, Egypt</li>
+				</ul>
+			</div>
+
+			<div class="lg:col-span-1">
+				<div class="bg-gray-600 p-6 rounded-lg shadow-2xl">
+					<h3 class="text-white text-xl font-semibold mb-2">Newsletter</h3>
+					<p class="text-gray-200 text-sm mb-4">
+						Join our community to receive updates, donation alerts, and life-saving stories.
+					</p>
+
+					<form (submit)="subscribe()">
+						<input type="email" placeholder="Email" [(ngModel)]="newsletterEmail" 
+							name="emailInput"
+							class="w-full p-3 mb-4 rounded-md border border-gray-500 focus:ring-red-500 focus:border-red-500 text-gray-900"
+							aria-label="Email address for newsletter subscription">
+
+						<button type="submit"
+							class="w-full py-3 bg-primary-red hover:bg-red-800 text-white font-bold rounded-md transition duration-300 shadow-md">
+							Subscribe
+						</button>
+					</form>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="flex flex-col sm:flex-row justify-between items-center pt-4">
+
+			<div class="flex space-x-4 mb-4 sm:mb-0">
+				<a href="#" class="w-12 h-12 bg-primary-red hover:bg-red-800 rounded-lg flex items-center justify-center transition duration-300" aria-label="Instagram">
+					<img src="images/instagram.png" alt="">
+				</a>
+
+				<a href="#" class="w-12 h-12 bg-primary-red hover:bg-red-800 rounded-lg flex items-center justify-center transition duration-300" aria-label="Facebook">
+					<img src="images/facebook.png" alt="">
+				</a>
+
+				<a href="#" class="w-12 h-12 bg-primary-red hover:bg-red-800 rounded-lg flex items-center justify-center transition duration-300" aria-label="Twitter">
+					<img src="images/twitter.png" alt="">
+				</a>
+
+				<a href="#" class="w-12 h-12 bg-primary-red hover:bg-red-800 rounded-lg flex items-center justify-center transition duration-300" aria-label="YouTube">
+					<img src="images/youtube.png" alt="">
+				</a>
+			</div>
+
+			<p class="text-gray-400 text-sm text-center sm:text-right">
+				© 2025 BloodLink. All rights reserved. Powered by the BloodLink Angular Team.
+			</p>
+		</div>
+	</div>
+</footer>

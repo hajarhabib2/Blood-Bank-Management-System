@@ -1,0 +1,7 @@
+:host {
+  --primary: var(--color-primary-red, #B71B1C);
+}
+
+body.modal-open {
+  overflow: hidden;
+}
