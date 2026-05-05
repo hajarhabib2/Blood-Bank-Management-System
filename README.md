@@ -1,60 +1,155 @@
+# Blood Bank Management System
 
-# BloodBank
+A comprehensive Angular-based web application for managing blood donations, inventory, requests, and deliveries. Built with modern web technologies to connect donors, recipients, and blood banks.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.6.
+## Project Overview
 
-## Development server
+**Developed by:** Mahmoud Gamal, Omar Adel, and Hagar Habib (DEPI Team)
 
-To start a local development server, run:
+**Year:** 2025
+
+## Technology Stack
+
+- **Framework:** Angular 20.3.0
+- **Styling:** Tailwind CSS 4.1.16
+- **HTTP Client:** Axios
+- **Mock API:** JSON Server
+- **Package Manager:** npm
+
+## Features
+
+### Public Features
+
+- **Home Page** - Hero section, statistics, how it works, testimonials, latest blog posts
+- **Register as Donor** - Blood donor registration with eligibility tracking
+- **Register as Recipient** - Patient blood request registration
+- **Register Organization** - Blood bank/organization registration
+- **Find Blood** - Search and locate blood banks
+- **About Us** - Information about the platform
+- **Blog** - Latest articles about blood donation
+- **Login/Register** - User authentication
+- **Blood Request** - Request blood for patients
+
+### Dashboard Features
+
+- **Organization Dashboard**
+  - Overview with statistics
+  - Donor management
+  - Blood inventory management
+  - Blood requests handling
+  - Deliveries tracking
+  - Reports generation
+
+- **Admin Dashboard**
+  - User management
+  - Organization management
+  - Blood bank oversight
+  - System-wide analytics
+
+## Data Models
+
+The system manages the following data entities:
+
+- **Inventory** - Blood units with type, status, expiry tracking
+- **Donors** - Donor information, donation history, eligibility
+- **Recipients** - Patient registration and blood requests
+- **Requests** - Blood requests from hospitals
+- **Deliveries** - Delivery tracking to hospitals
+- **Organizations** - Blood bank organizations
+- **Users** - System users with roles (admin, lab, coordinator, viewer, organization)
+- **Alerts** - System notifications (low stock, expiring units, etc.)
+- **Reports** - Daily statistics and analytics
+- **Donations** - Donation records
+- **Blogs** - Educational content
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js
+- npm
+
+### Installation
+
+```bash
+npm install
+```
+
+### Running the Application
+
+Start both the Angular development server and JSON API:
+
+```bash
+npm start
+```
+
+This will:
+
+- Start the Angular app at `http://localhost:4200`
+- Start the mock API at `http://localhost:3000`
+
+### Running Services Separately
+
+**Angular Development Server:**
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+**JSON Server (Mock API):**
 
 ```bash
-ng generate component component-name
+npm run json-server
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Building
 
 ```bash
-ng generate --help
+npm run build
 ```
 
-## Building
+## Project Structure
 
-To build the project run:
-
-```bash
-ng build
+```
+src/
+├── app/
+│   ├── core/
+│   │   ├── api/           # API configuration
+│   │   └── models/        # TypeScript interfaces
+│   ├── features/
+│   │   ├── home/          # Home page components
+│   │   ├── admin/         # Admin dashboard
+│   │   ├── organization-dashboard/  # Organization management
+│   │   ├── register-donor/
+│   │   ├── register-recipient/
+│   │   ├── register-org/
+│   │   ├── find-blood/
+│   │   ├── login/
+│   │   ├── forget-password/
+│   │   ├── blood-request/
+│   │   ├── latest-blog/
+│   │   └── about/
+│   └── shared/
+│       ├── components/     # Navbar, Footer
+│       └── form/           # Reusable form components
+├── mock-api/
+│   └── db.json            # Mock database
+└── index.html
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## User Roles
 
-## Running unit tests
+- **Admin** - Full system access
+- **Lab Technician** - Laboratory operations
+- **Coordinator** - Donation coordination
+- **Viewer** - Read-only access
+- **Organization** - Organization-level access
+- **Recipient** - Patient access
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## Blood Types Supported
 
-```bash
-ng test
-```
+A+, A-, B+, B-, AB+, AB-, O+, O-
 
-## Running end-to-end tests
+## License
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+This project is developed for educational purposes as part of the DEPI program.

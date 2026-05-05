@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { api } from '../api/axios.config';
 
-// 🔹 UserPayload مع id
+//  UserPayload مع id
 export interface UserPayload {
   id: string;
   email: string;
